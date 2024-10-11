@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mazen Youssef">
+    <title>القاضيه ممكن</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --background-color: #0f172a;
+            --text-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            max-width: 48rem;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .time-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-width: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .time-unit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .time-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+        }
+
+        .time-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+
+        .footer {
+            margin-top: 2rem;
+            color: var(--text-color);
+            font-style: inherit;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .time-unit {
+                min-width: 80px;
+            }
+
+            .time-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="page-container">
+        <div class="container">
+            <div class="image-container">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D8%A7%D9%84%D9%82%D8%A7%D8%B6%D9%8A%D9%87%20%D9%85%D9%85%D9%83%D9%86%20%E2%9C%8C%F0%9F%91%91-SvHXjoYaQtPdXlVio4dscdZhfVCm9J.jpeg" alt="محمد مجدي أفشة في لحظة حاسمة من المباراة">
+            </div>
+            <h1>كم جمعه مرت على اغلى هدف في تاريخ الكره المصريه هدف محمد مجدي افشه القاضيه ممكن؟</h1>
+            <div class="countdown">
+                <div class="time-unit">
+                    <span id="fridays" class="time-value">0</span>
+                    <span class="time-label">الجمع</span>
+                </div>
+                <div class="time-unit">
+                    <span id="days" class="time-value">0</span>
+                    <span class="time-label">الأيام</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours" class="time-value">0</span>
+                    <span class="time-label">الساعات</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes" class="time-value">0</span>
+                    <span class="time-label">الدقائق</span>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds" class="time-value">0</span>
+                    <span class="time-label">الثواني</span>
+                </div>
+            </div>
+            <p class="footer">Created by: Mazen Youssef</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 1, direction: "none", random: true, out_mode: "out" }
+            }
+        });
+
+        function updateCountdown() {
+            const targetDate = new Date('2020-11-27T20:48:00Z');
+            const now = new Date();
+            const difference = now.getTime() - targetDate.getTime();
+
+            const seconds = Math.floor(difference / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const fridays = Math.floor(days / 7);
+
+            animateValue('fridays', fridays);
+            animateValue('days', days);
+            animateValue('hours', hours % 24);
+            animateValue('minutes', minutes % 60);
+            animateValue('seconds', seconds % 60);
+        }
+
+        function animateValue(id, end) {
+            const obj = document.getElementById(id);
+            const start = parseInt(obj.innerHTML);
+            const range = end - start;
+            const duration = 900;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                obj.innerHTML = Math.floor(progress * range + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+
+            window.requestAnimationFrame(step);
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+    </script>
+</body>
+</html>
